@@ -1,0 +1,91 @@
+body {
+  font: 20px "Montserrat", sans-serif;
+  line-height: 1.8;
+  color: #f5f6f7;
+  background: #F2F4F5; }
+
+p {
+  font-size: 16px; }
+
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px; }
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px; }
+  .navbar .navbar-brand {
+    width: 25px !important;
+    height: 25px !important; }
+
+.navbar-nav li a:hover {
+  color: #1abc9c !important; }
+
+.bg-1 {
+  background-image: url("/Assets/img/shake.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0px -30px;
+  background-attachment: fixed;
+  color: #2f2f2f;
+  height: 600px;
+  width: auto; }
+  .bg-1 .img1-text {
+    padding-top: 70px; }
+  .bg-1 .img2-text {
+    padding-bottom: 40px; }
+
+.bg-2 {
+  background-color: #474e5d;
+  /* Dark Blue */
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 70px;
+  border-radius: 20px;
+  margin-top: -150px; }
+
+.bg-3 {
+  background-color: #ffffff;
+  /* White */
+  color: #555555;
+  padding-top: 70px;
+  padding-bottom: 70px; }
+  .bg-3 img {
+    height: 260px;
+    width: 100%; }
+
+.bg-4 {
+  background-color: #474e5d;
+  /* Dark Blue */
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 70px; }
+
+.bg-5 {
+  background-color: #2f2f2f;
+  color: #ffffff; }
+
+.bg-6 {
+  background-color: #ffffff;
+  /* White */
+  color: #555555;
+  border-radius: 20px;
+  margin-top: 30px; }
+
+.head {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 17px;
+  letter-spacing: 5px;
+  text-align: left; }
+
+.foot {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+/*# sourceMappingURL=home.css.map */
