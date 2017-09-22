@@ -4,42 +4,47 @@
 @endsection
 @section('content')
 <div class="container bg-6 text-center">
-	<div class="head">
-	Monitoring
-	</div>
-	{{-- <div class="row" style="background: #F2F4F5">
-	    
-  	</div> --}}
-  	<div>
-  		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-  	</div>
-  	<div class="table">
-  	<table style="width:100%" id="myTable">
-  	<tr>
-  	  <th class="text-center">Device name</th>
-  	  <th class="text-center">CPU</th> 
-  	  <th class="text-center">Memory</th>
-  	  <th class="text-center">Temp</th>
-  	  <th class="text-center">Date / Time</th>
-  	  <th class="text-center"></th>
-  	</tr>
-  	@foreach($_comp as $comp)
-	  	<tr class="">
-		  <td class="text-center"> {{$comp->name}} </td>
-		  <td class="text-center"> {{$comp->cpu}} </td>
-		  <td class="text-center"> {{$comp->memory}} </td>
-		  <td class="text-center"> {{$comp->temperature}} </td>
-		  <td class="text-center"> {{date('Y-m-d g:i:s A',strtotime($comp->created_at))}} </td>
-		  <td class="text-center"> <button type="button" comp_id="{{$comp->id}}" class="btn btn-info btn-lg popup_comp" data-toggle="modal" data-target="#myModal">View Info</button></td>
-	  	</tr>
- 	@endforeach
-</table>
-  	</div>
-  	<div class="foot">
-	footer jude
-	</div>
-</div>
-
+   <div class="head">
+      Monitoring
+   </div>
+   
+   <div class="bg">
+   
+   </div>
+  
+   <div class="clearfix" style="margin-bottom: 25px; margin-top: 25px; ">
+      <div class="pull-right input-group" style="border-radius: 0px; width: 400px;"><span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span><input class="form-control" type="text" id="myInput" onkeyup="myFunction()" placeholder="Enter keywords..."></div>
+   </div>
+   <div class="table">
+      <table class="table table-bordered table-striped table-hovered" style="width:100%" id="myTable">
+         <tr>
+            <th class="text-center">Device name</th>
+            <th class="text-center">CPU</th>
+            <th class="text-center">Memory</th>
+            <th class="text-center">Temp</th>
+            <th class="text-center">Date / Time</th>
+            <th class="text-center"></th>
+         </tr>
+         @foreach($_comp as $comp)
+         <tr class="">
+            <td class="text-center"> {{$comp->name}} </td>
+            <td class="text-center"> {{$comp->cpu}} % </td>
+            <td class="text-center"> {{$comp->memory}} %</td>
+            <td class="text-center"> {{$comp->temperature}} C </td>
+            <td class="text-center"> {{date('Y-m-d g:i:s A',strtotime($comp->created_at))}} </td>
+            <td class="text-center"> <button type="button" comp_id="{{$comp->id}}" class="btn btn-info btn-lg popup_comp" data-toggle="modal" data-target="#myModal" style=" border-radius: 0px; padding: 10px 17px; font-size: 10px">View Info</button></td>
+         </tr>
+         @endforeach
+      </table>
+   </div>
+   <div class="foot" style="border-top-width: 2px ; border-top-color: black;">      
+   		 <div class="clearfix" style="margin-bottom: 25px;">
+      		<div class="pull-right" style="margin-right: 30px;">
+      			<button type="button" comp_id="{{$comp->id}}" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myReportModal" style=" border-radius: 0px; padding: 10px 17px; font-size: 10px">Make a Report</button>
+      		</div>
+   		</div>
+   </div>
+</div>	
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -49,19 +54,21 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Full Information</h4>
+        <h4 class="modal-title" style="color: #000;">Full Information</h4>
       </div>
       <div class="modal-body">
-      	<div class="col-sm-4">
-	    <canvas id="doughnut-chart"></canvas>
-	    </div>
-	    <div class="col-sm-4">
-	    <canvas id="doughnut-chart1"></canvas> 
-	    </div>
-	    <div class="col-sm-4"> 
-	    <canvas id="doughnut-chart2"></canvas>
-	    </div>
-        <table style="width:100%; color:black" class="info_container">
+      	<div class="row clearfix">
+      		<div class="col-sm-4">
+		    <canvas id="doughnut-chart"></canvas>
+		    </div>
+		    <div class="col-sm-4">
+		    <canvas id="doughnut-chart1"></canvas> 
+		    </div>
+		    <div class="col-sm-4"> 
+		    <canvas id="doughnut-chart2"></canvas>
+		    </div>
+      	</div>
+        <table class="table table-bordered table-hovered table-striped info_container" style="width:100%; color:black; margin-top: 25px;">
 		</table>
       </div>
       <div class="modal-footer">
@@ -71,7 +78,40 @@
 
   </div>
 </div>
+
+<!-- Modal -->
+<div id="myReportModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="color: #000;">Choose a date range</h4>
+      </div>
+      <div class="modal-body clearfix">
+      <form method="GET" action="/admin/export">
+      	  {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
+	      <div class="pull-left" style="margin-left: 40px;"><span  style="color: black;"><h4>From :</h3></span><input type="text" class="datepicker" name="start" style="color: black;"></div>
+	      <div class="pull-right" style="margin-right: 50px;"><span  style="color: black;"><h4>To :</h3></span><input type="text" class="datepicker" name="end" style="color: black;"></div>
+	      {{-- <div class="clearfix" style="margin-bottom: 25px;">
+	      	
+	   	  </div>  --}}
+   	  
+      </div>
+      <div class="modal-footer">
+        <div class="pull-right" ><button class="btn btn-default" type="submit" style="border-radius: 0px; background: #474E5D; color: #ffffff; margin-right: 10px; padding: 10px 17px; font-size: 10px;" > Create Report</button></div>
+        <div class="pull-left"><button type="button" class="btn btn-danger" data-dismiss="modal" style="border-radius: 0px; color: #ffffff; margin-right: 10px; padding: 10px 17px; font-size: 10px;" >Close</button></div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
 <script type="text/javascript">
+
+$( function() 
+{
+	$( "#datepicker" ).datepicker();
+});
 
 $(".popup_comp").click(function()
 {
@@ -106,7 +146,7 @@ $(".popup_comp").click(function()
 	    {
 	    	
 		  	var string =   "<tr>"
-		  	  	string +=    "<th>"
+		  	  	string +=    "<td style='width: 1px; font-weight: 700'>"
 
 			    $.ajax(
 			    {
@@ -148,10 +188,10 @@ $(".popup_comp").click(function()
 			        }
 			    });
 
-		  	  	string +=		 key2+":"+used_name
+		  	  	string +=		 key2+"</td><td>"+used_name
 
 
-		  	  	string +=	  "</th>"
+		  	  	string +=	  "</td>"
 		  	  	string +=	"</tr>";
 
 		  	  	$(".info_container").append(string);	  				

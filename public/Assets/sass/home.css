@@ -71,6 +71,7 @@ p {
   color: #ffffff; }
 
 .bg-6 {
+  font-size: 15px;
   background-color: #ffffff;
   /* White */
   color: #555555;
@@ -87,5 +88,12 @@ p {
 .foot {
   padding-top: 15px;
   padding-bottom: 15px; }
+
+.bg {
+  background-image: url("/Assets/img/shake.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150px;
+  width: auto; }
 
 /*# sourceMappingURL=home.css.map */

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompdatasTable extends Migration
+class TblEventLogs extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,14 @@ class CreateCompdatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('compdatas', function (Blueprint $table) {
+       Schema::create('eventLog', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('cpu');
-            $table->integer('memory');
-            $table->integer('disk');
-            $table->integer('temperature');
+            $table->integer('logType');
+            $table->integer('entryType');
+            $table->integer('eventid');
+            $table->integer('message');
             $table->string('created_at');
-            $table->string('updated_at');
         });
     }
 
@@ -31,6 +30,6 @@ class CreateCompdatasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('compdatas');
+        //
     }
 }

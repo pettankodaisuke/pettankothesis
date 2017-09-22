@@ -30,34 +30,31 @@ Home
 @endsection
 @section('content')
 <div class="container-fluid bg-1 text-center">
-    <h3 class="img1-text">Who Am I?</h3>
-    <h3 class="img2-text">I'm an adventurer</h3>
+    <h3 class="img1-text">Web-based Computer and Network Analysis</h3>
+    <h3 class="img2-text">for ACLC College of Sta Maria Bayan</h3>
 </div>
 <div class="container bg-2 text-center">
   <h3>What Am I?</h3>
-  <p>Lorem ipsum..</p>
+  <p>Web-based Computer and Network Analysis is system that will help us to troubleshoot our computer and network to lessen the time to find what the problem is either our computer or our network connection. We decided to develop this system to help our lab facilitator to monitor what’s happening in our computer units or in our internet connection. It has an ability to generate a report weekly & monthly using GMAIL, and it also use graph to see the status of the unit.</p>
 </div>
 <div class="container bg-3 text-center">
   <h3 class="margin">Where To Find Me?</h3><br>
   <div class="row">
     <div class="col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Joshua Garcia</p>
       <img src="Assets/img/analyze.jpg" class="img-responsive margin img-square "  alt="Image">
     </div>
     <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Winston Jude Guevarra</p>
       <img src="Assets/img/analyze.jpg" class="img-responsive margin img-square"  alt="Image">
     </div>
     <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Jellieca Nalayog</p>
       <img src="Assets/img/analyze.jpg" class="img-responsive margin img-square"  alt="Image">
     </div>
   </div>
 </div>
-<div class="container bg-4 text-center">
-  <h3>What Am I?</h3>
-  <p>Lorem ipsum..</p>
-</div>
+
 {{-- <!-- Modal -->
   <div class="modal fade" id="signmodal" role="dialog">
     <div class="modal-dialog">
@@ -92,6 +89,6 @@ Home
 @endsection
 @section('footer')
 <footer class="container-fluid bg-5 text-center">
-  <p>Insert our footer Jude</a></p> 
+  <p>copy right 2017</a></p> 
 </footer>
 @endsection

@@ -111,6 +111,7 @@ p {font-size: 16px;}
 }
 
 .bg-6{
+    font-size: 15px;
     background-color: #ffffff; /* White */
     color: #555555;
     border-radius: 20px;
@@ -126,4 +127,12 @@ p {font-size: 16px;}
 .foot{
     padding-top: 15px;
     padding-bottom: 15px;
+}
+.bg{
+    background-image: url("/Assets/img/shake.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: auto;
+
 }
